@@ -8,7 +8,7 @@ export default function IndexPage() {
 
   return (
     <div className={darkMode}>
-      <Nav colorScheme={handleColorScheme} current={darkMode}/>
+      <Nav toggleColorScheme={handleColorScheme} currentColorScheme={darkMode}/>
       <Title />
     </div>
   )
