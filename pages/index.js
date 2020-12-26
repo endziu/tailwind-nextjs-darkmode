@@ -1,14 +1,15 @@
+import { useState } from 'react'
 import Nav from '../components/nav'
+import Title from '../components/title'
 
 export default function IndexPage() {
+  const [darkMode, setDarkMode] = useState("light")
+  const handleDarkMode = (e) => setDarkMode(darkMode !== "dark" ? "dark" : "light")
+
   return (
-    <div>
-      <Nav />
-      <div className="py-20">
-        <h1 className="text-5xl text-center text-gray-700 dark:text-gray-100">
-          Next.js + Tailwind CSS 2.0
-        </h1>
-      </div>
+    <div className={darkMode}>
+      <Nav toggleDarkMode={handleDarkMode}/>
+      <Title />
     </div>
   )
 }

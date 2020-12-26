@@ -1,30 +1,23 @@
 import Link from 'next/link'
 
-const links = [
-  { href: 'https://github.com/vercel/next.js', label: 'GitHub' },
-  { href: 'https://nextjs.org/docs', label: 'Docs' },
-]
-
-export default function Nav() {
+export default function Nav({toggleDarkMode}) {
   return (
-    <nav>
+    <nav className="dark:bg-gray-700">
       <ul className="flex items-center justify-between p-8">
         <li>
           <Link href="/">
-            <a className="text-blue-500 no-underline text-accent-1 dark:text-blue-300">
+            <a className="no-underline btn-blue">
               Home
             </a>
           </Link>
         </li>
-        <ul className="flex items-center justify-between space-x-4">
-          {links.map(({ href, label }) => (
-            <li key={`${href}${label}`}>
-              <a href={href} className="no-underline btn-blue">
-                {label}
-              </a>
-            </li>
-          ))}
-        </ul>
+        <li>
+          <label htmlFor="toggle" className="text-xs text-gray-600 dark:text-gray-100 mr-2 cursor-pointer">dark mode</label>
+          <div className="relative inline-block w-10 mr-2 align-middle select-none transition duration-700 ease-in">
+            <input type="checkbox" name="toggle" id="toggle" onClick={toggleDarkMode} className="toggle-checkbox absolute block w-6 h-6 rounded-full bg-white border-4 appearance-none cursor-pointer"/>
+            <label htmlFor="toggle" className="toggle-label block overflow-hidden h-6 rounded-full bg-gray-300 cursor-pointer" />
+          </div>
+        </li>
       </ul>
     </nav>
   )
