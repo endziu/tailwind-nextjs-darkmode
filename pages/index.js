@@ -6,7 +6,7 @@ const storeColorScheme = useStickyState("colorScheme")
 
 export default function IndexPage() {
   const [colorScheme, setColorScheme] = storeColorScheme("light")
-  const handleColorScheme = (e) => setColorScheme(colorScheme === "dark" ? "light" : "dark")
+  const handleColorScheme = (e) => setColorScheme(e.currentTarget.checked ? "dark" : "light")
 
   return (
     <div className={colorScheme}>
