@@ -1,31 +1,14 @@
-import { useState, useEffect } from 'react'
 import Nav from '../components/nav'
 import Title from '../components/title'
-
-function useStickyState(defaultValue, key) {
-  const [value, setValue] = useState(defaultValue);
-
-  useEffect(() => {
-    const stickyValue = window.localStorage.getItem(key);
-
-    if (stickyValue !== null) {
-      setValue(JSON.parse(stickyValue));
-    }
-  }, [key]);
-
-  useEffect(() => {
-    window.localStorage.setItem(key, JSON.stringify(value));
-  }, [key, value]);
-
-  return [value, setValue];
-}
+import useStickyState from '../hooks/useStickyState.js'
 
 export default function IndexPage() {
   const [darkMode, setDarkMode] = useStickyState("light", "mode")
+  const handleColorScheme = (e) => setDarkMode(darkMode === "dark" ? "light" : "dark")
 
   return (
     <div className={darkMode}>
-      <Nav colorScheme={(e) => setDarkMode(darkMode !== "dark" ? "dark" : "light")} current={darkMode}/>
+      <Nav colorScheme={handleColorScheme} current={darkMode}/>
       <Title />
     </div>
   )
