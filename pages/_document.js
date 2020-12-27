@@ -5,7 +5,7 @@ class MyDocument extends Document {
     return (
       <Html>
         <Head>
-          <script src="/static/theme.js"></script>
+          <script src="/public/theme.js"></script>
         </Head>
         <body>
           {/* some sources placed script inside body, before Main, but I experienced flashing */}
