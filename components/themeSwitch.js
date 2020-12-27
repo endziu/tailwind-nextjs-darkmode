@@ -8,7 +8,7 @@ export default function ThemeSwitch({handler, current}) {
           dark mode
       </label>
       <div
-        className="relative inline-block w-10 mr-2 align-middle select-none transform transition-transform duration-500 ease-in"
+        className="relative inline-block w-10 align-middle select-none transform transition-transform duration-500 ease-in"
       >
         <input
           type="checkbox"

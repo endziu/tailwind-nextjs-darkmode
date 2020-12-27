@@ -1,6 +1,12 @@
 @tailwind base;
 
 /* Write your own custom base styles here */
+.toggle-checkbox:checked {
+  @apply right-0 border-green-400;
+}
+.toggle-checkbox:checked + .toggle-label {
+  @apply bg-green-400;
+}
 
 /* Start purging... */
 @tailwind components;
@@ -10,17 +16,6 @@
 .btn-blue {
   @apply px-4 py-2 text-lg font-bold text-white bg-blue-500 rounded;
 }
-
-.toggle-checkbox:checked {
-  @apply right-0 border-green-400;
-  right: 0;
-  border-color: #68D391;
-}
-.toggle-checkbox:checked + .toggle-label {
-  @apply bg-green-400;
-  background-color: #68D391;
-}
-
 
 /* Start purging... */
 @tailwind utilities;
