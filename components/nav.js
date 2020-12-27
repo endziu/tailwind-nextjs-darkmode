@@ -6,7 +6,7 @@ export default function Nav({toggleColorScheme, currentColorScheme}) {
     <nav className="dark:bg-gray-700 flex items-center justify-between p-4">
       <Link href="/">
         <a className="no-underline btn-blue">
-          settings
+          nothing
         </a>
       </Link>
       <ThemeSwitch handler={toggleColorScheme} current={currentColorScheme}/>

@@ -11,7 +11,7 @@ export default function IndexPage() {
   return (
     <div className={colorScheme}>
       <Nav toggleColorScheme={handleColorScheme} currentColorScheme={colorScheme}/>
-      <Title />
+      <Title message="merry X-mass"/>
     </div>
   )
 }

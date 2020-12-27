@@ -9,6 +9,7 @@ export default function Title({message = "https://home.page"}) {
     <div className="bg-gray-100 dark:bg-gray-800 flex" style={{"minHeight": "calc(100vh - 44px - 32px)"}}>
       <div className={className}>
         <span className="bg-gradient-to-r from-yellow-300 via-green-500 to-blue-500 text-4xl md:text-6xl lg:text-8xl xl:text-9xl cursor-pointer tracking-tighter align-middle font-bold text-transparent bg-clip-text">{message}</span>
+        <span className="text-4xl md:text-6xl lg:text-8xl xl:text-9xl align-middle">🎄🎅</span>
       </div>
     </div>
   )
