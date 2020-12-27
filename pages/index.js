@@ -1,10 +1,6 @@
 import {useState, useEffect} from 'react'
 import {useTheme} from 'next-themes'
 
-import Nav from '../components/nav'
-import Message from '../components/message'
-
-
 export default function IndexPage() {
   const [isMounted, setIsMounted] = useState(false)
   const { theme, setTheme } = useTheme()
@@ -21,8 +17,37 @@ export default function IndexPage() {
 
   return (
     <div className={theme}>
-      <Nav toggleColorScheme={handleColorScheme} currentColorScheme={theme}/>
-      <Message text="merry X-mass"/>
+      <nav className="dark:bg-gray-700 flex items-center justify-between p-4">
+        <div>
+          <label
+            htmlFor="toggle"
+            className="text-xs text-gray-600 dark:text-gray-100 mr-2 cursor-pointer"
+          >
+            dark mode
+          </label>
+          <div
+            className="relative inline-block w-10 align-middle select-none transform transition-transform duration-500 ease-in"
+          >
+            <input
+              type="checkbox"
+              name="toggle"
+              id="toggle"
+              onChange={handleColorScheme}
+              checked={theme === "dark"}
+              className="toggle-checkbox absolute block w-6 h-6 rounded-full bg-white border-4 appearance-none cursor-pointer"
+            />
+            <label 
+              htmlFor="toggle"
+              className="toggle-label block overflow-hidden h-6 rounded-full bg-gray-300 cursor-pointer"
+            />
+          </div>
+        </div>
+      </nav>
+      <div className="bg-gray-100 dark:bg-gray-800 flex" style={{"minHeight": "calc(100vh - 26px - 32px)"}}>
+        <div className="bg-gray-100 dark:bg-gray-700 m-auto p-10 shadow-lg rounded-2xl text-gray-300 no-underline">
+          <span className="text-4xl md:text-6xl lg:text-8xl xl:text-9xl align-middle"> 🦄🎄🎅🎁</span>
+        </div>
+      </div>
     </div>
   )
 }
