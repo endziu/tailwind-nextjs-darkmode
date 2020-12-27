@@ -1,9 +1,9 @@
 (function() {
-  var storageKey = 'colorScheme'
-  var classNameDark = 'dark'
-  var classNameLight = 'light'
+  const storageKey = 'colorScheme'
+  const classNameDark = 'dark'
+  const classNameLight = 'light'
 
-  var localStorageTheme = null
+  let localStorageTheme = null
 
   try {
     localStorageTheme = localStorage.getItem(storageKey)
@@ -11,14 +11,13 @@
     console.log(err)
   }
   
-  var localStorageExists = localStorageTheme !== null
-  
-  if (localStorageExists) {
+  if (localStorageTheme !== null) {
     localStorageTheme = JSON.parse(localStorageTheme)
     document.body.classList.add(localStorageTheme === classNameDark ? classNameDark : classNameLight)
-    document.body.classList.remove(localStorageTheme === classNameLight ? classNameLight : classNameDark)
   } else {
+    console.log("no storage")
     var isDarkMode = document.body.classList.contains(classNameDark)
     localStorage.setItem(storageKey, JSON.stringify(isDarkMode ? classNameDark : classNameLight))
   }
+
 })()

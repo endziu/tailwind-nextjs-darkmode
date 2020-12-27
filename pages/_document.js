@@ -10,6 +10,7 @@ class MyDocument extends Document {
           <Main />
           <NextScript />
         </body>
+        <script src="theme2.js"></script>
       </Html>
     )
   }
