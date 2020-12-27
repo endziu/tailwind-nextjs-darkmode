@@ -1,16 +1,27 @@
+import {useState, useEffect} from 'react'
+import {useTheme} from 'next-themes'
+
 import Nav from '../components/nav'
 import Title from '../components/title'
-import useStickyState from '../hooks/useStickyState.js'
 
-const storeColorScheme = useStickyState("colorScheme")
 
 export default function IndexPage() {
-  const [colorScheme, setColorScheme] = storeColorScheme("light")
-  const handleColorScheme = (e) => setColorScheme(e.currentTarget.checked ? "dark" : "light")
+  const [isMounted, setIsMounted] = useState(false)
+  const { theme, setTheme } = useTheme()
+
+  useEffect(() => {
+    setIsMounted(true);
+  }, []);
+
+  const handleColorScheme = () => {
+    if (isMounted) {
+      setTheme(theme === "light" ? "dark" : "light")
+    }
+  }
 
   return (
-    <div className={colorScheme}>
-      <Nav toggleColorScheme={handleColorScheme} currentColorScheme={colorScheme}/>
+    <div className={theme}>
+      <Nav toggleColorScheme={handleColorScheme} currentColorScheme={theme}/>
       <Title message="merry X-mass"/>
     </div>
   )
