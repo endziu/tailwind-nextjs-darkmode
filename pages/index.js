@@ -2,7 +2,7 @@ import {useState, useEffect} from 'react'
 import {useTheme} from 'next-themes'
 
 import Nav from '../components/nav'
-import Title from '../components/title'
+import Message from '../components/message'
 
 
 export default function IndexPage() {
@@ -22,7 +22,7 @@ export default function IndexPage() {
   return (
     <div className={theme}>
       <Nav toggleColorScheme={handleColorScheme} currentColorScheme={theme}/>
-      <Title message="merry X-mass"/>
+      <Message text="merry X-mass"/>
     </div>
   )
 }
