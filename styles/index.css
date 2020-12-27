@@ -1,6 +1,5 @@
 @tailwind base;
 
-/* Write your own custom base styles here */
 .toggle-checkbox:checked {
   @apply right-0 border-green-400;
 }
@@ -12,13 +11,6 @@
 @tailwind components;
 /* Stop purging. */
 
-/* Write your own custom component styles here */
-.btn-blue {
-  @apply px-4 py-2 text-lg font-bold text-white bg-blue-500 rounded;
-}
-
 /* Start purging... */
 @tailwind utilities;
 /* Stop purging. */
-
-/* Your own custom utilities */
