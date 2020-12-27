@@ -4,11 +4,9 @@ class MyDocument extends Document {
   render() {
     return (
       <Html>
-        <Head>
-          <script src="/static/theme.js"></script>
-        </Head>
+        <Head />
         <body>
-          {/* some sources placed script inside body, before Main, but I experienced flashing */}
+          <script src="theme.js"></script>
           <Main />
           <NextScript />
         </body>
