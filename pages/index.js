@@ -30,7 +30,7 @@ export default function IndexPage() {
         <ThemeSwitch handler={handleColorScheme} current={theme}/>
       </header>
       <main className={mainClass} style={footerStyle} >
-        <EmojiCard />
+        <EmojiCard theme={theme}/>
       </main>
       <footer className={footerClass}>
         <GithubLink />
