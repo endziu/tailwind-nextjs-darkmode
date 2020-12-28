@@ -34,11 +34,11 @@ export default function IndexPage() {
               id="toggle"
               onChange={handleColorScheme}
               checked={theme === "dark"}
-              className="toggle-checkbox absolute block w-6 h-6 rounded-full bg-white border-4 appearance-none cursor-pointer"
+              className="toggle-checkbox absolute block w-6 h-6 rounded-full bg-white border-4 appearance-none cursor-pointer transition-transform duration-300"
             />
             <label 
               htmlFor="toggle"
-              className="toggle-label block overflow-hidden h-6 rounded-full bg-gray-300 cursor-pointer"
+              className="toggle-label block overflow-hidden h-6 rounded-full bg-gray-300 cursor-pointer transition-colors duration-500"
             />
           </div>
         </div>

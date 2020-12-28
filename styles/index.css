@@ -1,7 +1,7 @@
 @tailwind base;
 
 .toggle-checkbox:checked {
-  @apply right-0 border-green-400;
+  @apply transform translate-x-4 border-green-400;
 }
 .toggle-checkbox:checked + .toggle-label {
   @apply bg-green-400;
