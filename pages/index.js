@@ -19,15 +19,20 @@ export default function IndexPage() {
     }
   }
 
+  const headerClass = "dark:bg-gray-700 p-4 transition-colors duration-500"
+  const mainClass = "bg-gray-100 dark:bg-gray-800 flex transition-colors duration-500"
+  const footerClass = "dark:bg-gray-700 text-gray-600 dark:text-gray-300 transition-colors duration-500"
+  const footerStyle = {"minHeight": "calc(100vh - 56px - 56px)"}
+  
   return (
     <div className={theme}>
-      <header className="dark:bg-gray-700 p-4 transition-colors duration-500">
+      <header className={headerClass}>
         <ThemeSwitch handler={handleColorScheme} current={theme}/>
       </header>
-      <main style={{"minHeight": "calc(100vh - 56px - 56px)"}} className="bg-gray-100 dark:bg-gray-800 flex transition-colors duration-500">
+      <main className={mainClass} style={footerStyle} >
         <EmojiCard />
       </main>
-      <footer className="dark:bg-gray-700 text-gray-600 dark:text-gray-300 transition-colors duration-500">
+      <footer className={footerClass}>
         <GithubLink />
       </footer>
     </div>
