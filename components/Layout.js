@@ -14,23 +14,18 @@ function Layout({ children }) {
   const toggleMenu = () => dispatch({type: "TOGGLE_MENU", payload: !state.menu})
 
   return (
-    <div className={theme}>
+    <>
       <header className="flex items-center justify-between bg-gray-50 dark:bg-gray-700 p-4 transition-colors duration-500">
         <MenuSwitch handler={toggleMenu} current={state.menu} />
         <ThemeSwitch handler={toggleTheme} current={theme}/>
       </header>
 
-      <main
-        style={{"minHeight": "calc(100vh - 58px - 56px)"}}
-        className="bg-gray-200 dark:bg-gray-900 flex flex-col items-center justify-center transition-colors duration-500"
-      >
-        {children}
-      </main>
+      {children}
       
       <footer className="bg-gray-50 dark:bg-gray-700 text-gray-600 dark:text-gray-300 transition-colors duration-500">
         <GithubLink />
       </footer>
-    </div>
+    </>
   )
 }
 
